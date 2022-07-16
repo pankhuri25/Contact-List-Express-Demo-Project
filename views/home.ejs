@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title> <%= title %> </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='home.css'>
+    <!-- <script src='main.js'></script> -->
+</head>
+<body>
+    <!-- <% if (true){ %>
+        <h1>It's true!</h1>          
+    <% }else{ %>
+        <p>It's false :(</p>
+    <% } %> -->
+
+    <!-- <ul>
+    <% for(let i=1; i<10; i++) { %>
+        <li> <%= i %> </li>
+    <% } %>
+    </ul> -->
+
+    <ul>
+        <% for (let i of contact_list) { %>
+            <li>
+                <%= i.name %>
+                <p><%= i.number %></p>
+            </li>
+        <% } %>
+    </ul>
+
+    <form action="/create-contact" method="POST">
+        <input type="text" name="name" placeholder="Enter Name" required>
+        <br>
+        <input type="number" name="number" placeholder="Enter Phone number" required>
+        <br>
+        <button type="submit"> Submit </button>
+    </form>
+</body>
+</html>
